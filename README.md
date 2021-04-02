@@ -1,6 +1,7 @@
 # dockering-php-application
 Dockering php application using php:apache docker image and mysql docker image
 
+## Installing docker on rhel8
 [root@ip-172-31-3-145 ~]# cat /etc/redhat-release  
 Red Hat Enterprise Linux release 8.3 (Ootpa)  
 [root@ip-172-31-3-145 ~]# dnf update  
@@ -13,6 +14,8 @@ Red Hat Enterprise Linux release 8.3 (Ootpa)
 [root@ip-172-31-3-145 ~]# systemctl start docker  
 [root@ip-172-31-3-145 ~]# systemctl is-active docker  
 [root@ip-172-31-3-145 ~]# docker --version  
+
+## dockering-php-application with out swarm
 [root@ip-172-31-3-145 /]# cd /  
 [root@ip-172-31-3-145 /]# mkdir venkat  
 [root@ip-172-31-3-145 /]# cd venkat  
