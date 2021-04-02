@@ -1,23 +1,15 @@
 # dockering-php-application
 Dockering php application using php:apache docker image and mysql docker image
 
-[root@ip-172-31-3-145 /]# cd /
-
-[root@ip-172-31-3-145 /]# mkdir venkat
-
-[root@ip-172-31-3-145 /]# cd venkat
-
-[root@ip-172-31-3-145 venkat]# ls -lart /venkat
-
-total 8
-
-dr-xr-xr-x. 19 root root  250 Apr  2 14:51 ..
-
--rwxrwxrwx.  1 root root   93 Apr  2 15:04 create_table.sql
-
--rwxrwxrwx.  1 root root 1525 Apr  2 15:28 index.php
-
--rwxrwxrwx.  1 root root   73 Apr  2 16:13 Dockerfile
+[root@ip-172-31-3-145 /]# cd /  
+[root@ip-172-31-3-145 /]# mkdir venkat  
+[root@ip-172-31-3-145 /]# cd venkat  
+[root@ip-172-31-3-145 venkat]# ls -lart /venkat  
+total 8  
+dr-xr-xr-x. 19 root root  250 Apr  2 14:51 ..  
+-rwxrwxrwx.  1 root root   93 Apr  2 15:04 create_table.sql  
+-rwxrwxrwx.  1 root root 1525 Apr  2 15:28 index.php  
+-rwxrwxrwx.  1 root root   73 Apr  2 16:13 Dockerfile  
 
 drwxr-xr-x.  2 root root   47 Apr  2 15:56 .
 
