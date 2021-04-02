@@ -51,7 +51,7 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 [root@ip-172-31-3-145 ~]# docker node ls  
 [root@ip-172-31-3-145 ~]# docker service create --name myweb -p 8080:80 myphpapache 
 [root@ip-172-31-3-145 ~]# docker exec -it <myweb container> bash  
-root@<myweb container>:/# nano /var/www/html/index.php --> check attachment
+root@<myweb container>:/# nano /var/www/html/index.php --> check attachment  
 [root@ip-172-31-3-145 ~]# docker service create --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysql mysql  
 [root@ip-172-31-3-145 ~]# docker service ls  
 [root@ip-172-31-3-145 ~]# docker service ps mysql  
