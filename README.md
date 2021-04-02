@@ -49,7 +49,10 @@ To add a worker to this swarm, run the following command:
  docker swarm join --token SWMTKN-1-2mslmt9h0gyj9o1nithh0fz9pgl5jx6e2eak5tkjgismktbd46-e8tl43ha0nie4qbjnri51kerz 172.31.3.145:2377 --> run this on other docker nodes to join as worker nodes.  
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.  
 [root@ip-172-31-3-145 ~]# docker node ls  
-[root@ip-172-31-3-145 ~]#  
-
-
-
+[root@ip-172-31-3-145 ~]# docker service create --name myweb -p 8080:80 myphpapache 
+[root@ip-172-31-3-145 ~]# docker exec -it <myweb container> bash  
+root@<myweb container>:/# nano /var/www/html/index.php --> check attachment
+[root@ip-172-31-3-145 ~]# docker service create --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysql mysql  
+[root@ip-172-31-3-145 ~]# docker service ls  
+[root@ip-172-31-3-145 ~]# docker service ps mysql  
+[root@ip-172-31-3-145 ~]# docker service ps myweb  
