@@ -7,7 +7,7 @@ Red Hat Enterprise Linux release 8.3 (Ootpa)
 [root@ip-172-31-3-145 ~]# dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo --> Add the repo  
 [root@ip-172-31-3-145 ~]# dnf repolist -v --> View the repo  
 [root@ip-172-31-3-145 ~]# dnf list docker-ce --showduplicates | sort -r  
-[root@ip-172-31-3-145 ~]# dnf install docker-ce-3:18.09.1-3.el7 --> Install latest version of docker
+[root@ip-172-31-3-145 ~]# dnf install docker-ce-3:18.09.1-3.el7 --> Install latest version of docker  
 [root@ip-172-31-3-145 ~]# systemctl disable firewalld  
 [root@ip-172-31-3-145 ~]# systemctl enable --now docker  
 [root@ip-172-31-3-145 ~]# systemctl start docker  
