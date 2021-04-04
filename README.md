@@ -49,7 +49,7 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 [root@ip-172-31-3-145 ~]# docker system prune
 [root@ip-172-31-3-145 ~]# docker rmi <images>
 
-### Creating new docker images which includes the app files in myphpapache image and database and its tables in mysqldb
+** Creating new docker images which includes the app files in myphpapache image and database and its tables in mysqldb **
 
 [root@ip-172-31-3-145 ~]# cd /venkat/swarm/mysql_dockerfile  
 [root@ip-172-31-3-145 mysql_dockerfile]# ls -lart   
