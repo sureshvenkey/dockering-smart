@@ -9,3 +9,14 @@ ADD rootfs.tar.gz /.
 The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. EXPOSE does not make the ports of the container accessible to the host. The EXPOSE instruction makes it available only for inter-container communication.
 
 The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions in side the container image. 
+
+Both CMD and ENTRYPOINT instructions define what command gets executed when running a container. There are few rules that describe their co-operation.
+
+1. Dockerfile should specify at least one of CMD or ENTRYPOINT commands.
+2. ENTRYPOINT should be defined when using the container as an executable.
+3. CMD should be used as a way of defining default arguments for an ENTRYPOINT command or for executing an ad-hoc command in a container.
+4. CMD will be overridden when running the container with alternative arguments.
+===> You can not override the ENTRYPOINT wereas CMD can be overriden by new CMD 
+
+LABLE instruction are key valuepair of metadata for images
+ENV instruction are key valuepair Environment Variables to be supplied in container images.
