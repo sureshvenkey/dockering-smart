@@ -29,10 +29,9 @@ use phonedb;
 create table emp(name varchar(16), phone varchar(16));  
 [root@ip-172-31-3-145 venkat]#  
 [root@ip-172-31-3-145 venkat]# cat Dockerfile  
-```FROM php:apache  
+FROM php:apache  
 RUN docker-php-ext-install mysqli  
 RUN apachectl restart
-```
 [root@ip-172-31-3-145 venkat]# docker build -t myphpapache .  
 [root@ip-172-31-3-145 venkat]# docker container prune  
 [root@ip-172-31-3-145 venkat]# docker network create -d bridge mybridge  
