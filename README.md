@@ -47,12 +47,29 @@ RUN apachectl restart
 Swarm initialized: current node (iwxjtiguuo8qbxrl66v7l9aox) is now a manager.  
 To add a worker to this swarm, run the following command:  
  docker swarm join --token SWMTKN-1-2mslmt9h0gyj9o1nithh0fz9pgl5jx6e2eak5tkjgismktbd46-e8tl43ha0nie4qbjnri51kerz 172.31.3.145:2377 --> run this on other docker nodes to join as worker nodes.  
-To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.  
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions. 
 [root@ip-172-31-3-145 ~]# docker node ls  
-[root@ip-172-31-3-145 ~]# docker service create --name myweb -p 8080:80 myphpapache  
-[root@ip-172-31-3-145 ~]# docker exec -it <myweb container> bash  
-root@<myweb container>:/# nano /var/www/html/index.php --> check attachment  
-[root@ip-172-31-3-145 ~]# docker service create --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysql mysql  
+
+[root@ip-172-31-3-145 ~]# cd /venkat/swarm/mysql_dockerfile  
+[root@ip-172-31-3-145 mysql_dockerfile]# ls -lart  
+total 8  
+drwxr-xr-x. 4 root root 54 Apr  4 03:38 ..  
+-rwxr-xr-x. 1 root root 93 Apr  4 03:50 create_table.sql  
+-rwxrwxrwx. 1 root root 92 Apr  4 05:24 Dockerfile  
+drwxrwxrwx. 2 root root 48 Apr  4 05:26 .  
+[root@ip-172-31-3-145 mysql_dockerfile]# docker build -t mysqldb .  
+[root@ip-172-31-3-145 mysql_dockerfile]# cd /venkat/swarm/myweb_dockerfile  
+[root@ip-172-31-3-145 myweb_dockerfile]# ls -lart  
+total 8  
+-rwxrwxrwx. 1 root root 1521 Apr  4 03:23 index.php  
+drwxr-xr-x. 4 root root   54 Apr  4 03:38 ..  
+-rwxrwxrwx. 1 root root  102 Apr  4 04:13 Dockerfile  
+drwxrwxrwx. 2 root root   41 Apr  4 06:41 .  
+[root@ip-172-31-3-145 myweb_dockerfile]# docker build -t myphpapache .  
+[root@ip-172-31-3-145 myweb_dockerfile]# docker images  
+[root@ip-172-31-3-145 myweb_dockerfile]# cd ~  
+[root@ip-172-31-3-145 ~]# docker service create --name myweb -p 8080:80 myphpapache    
+[root@ip-172-31-3-145 ~]# docker service create --name mysql -p 3306:3306 mysqldb 
 [root@ip-172-31-3-145 ~]# docker service ls  
 [root@ip-172-31-3-145 ~]# docker service ps mysql  
 [root@ip-172-31-3-145 ~]# docker service ps myweb  
