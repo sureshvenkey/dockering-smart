@@ -20,12 +20,9 @@ Red Hat Enterprise Linux release 8.3 (Ootpa)
 [root@ip-172-31-3-145 /]# mkdir venkat  
 [root@ip-172-31-3-145 /]# cd venkat  
 [root@ip-172-31-3-145 venkat]# ls -lart /venkat  
-total 8  
-dr-xr-xr-x. 19 root root  250 Apr  2 14:51 ..  
 -rwxrwxrwx.  1 root root   93 Apr  2 15:04 create_table.sql  
 -rwxrwxrwx.  1 root root 1525 Apr  2 15:28 index.php  
 -rwxrwxrwx.  1 root root   73 Apr  2 16:13 Dockerfile  
-drwxr-xr-x.  2 root root   47 Apr  2 15:56 .  
 [root@ip-172-31-3-145 venkat]# cat create_table.sql  
 create database phonedb;  
 use phonedb;  
@@ -49,22 +46,20 @@ To add a worker to this swarm, run the following command:
  docker swarm join --token SWMTKN-1-2mslmt9h0gyj9o1nithh0fz9pgl5jx6e2eak5tkjgismktbd46-e8tl43ha0nie4qbjnri51kerz 172.31.3.145:2377 --> run this on other docker nodes to join as worker nodes.  
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions. 
 [root@ip-172-31-3-145 ~]# docker node ls  
+[root@ip-172-31-3-145 ~]# docker system prune
+[root@ip-172-31-3-145 ~]# docker rmi <images>
+
+Creating new docker images which includes the app files in myphpapache image and database and its tables in mysqldb
 
 [root@ip-172-31-3-145 ~]# cd /venkat/swarm/mysql_dockerfile  
-[root@ip-172-31-3-145 mysql_dockerfile]# ls -lart  
-total 8  
-drwxr-xr-x. 4 root root 54 Apr  4 03:38 ..  
+[root@ip-172-31-3-145 mysql_dockerfile]# ls -lart   
 -rwxr-xr-x. 1 root root 93 Apr  4 03:50 create_table.sql  
 -rwxrwxrwx. 1 root root 92 Apr  4 05:24 Dockerfile  
-drwxrwxrwx. 2 root root 48 Apr  4 05:26 .  
 [root@ip-172-31-3-145 mysql_dockerfile]# docker build -t mysqldb .  
 [root@ip-172-31-3-145 mysql_dockerfile]# cd /venkat/swarm/myweb_dockerfile  
 [root@ip-172-31-3-145 myweb_dockerfile]# ls -lart  
-total 8  
 -rwxrwxrwx. 1 root root 1521 Apr  4 03:23 index.php  
-drwxr-xr-x. 4 root root   54 Apr  4 03:38 ..  
 -rwxrwxrwx. 1 root root  102 Apr  4 04:13 Dockerfile  
-drwxrwxrwx. 2 root root   41 Apr  4 06:41 .  
 [root@ip-172-31-3-145 myweb_dockerfile]# docker build -t myphpapache .  
 [root@ip-172-31-3-145 myweb_dockerfile]# docker images  
 [root@ip-172-31-3-145 myweb_dockerfile]# cd ~  
