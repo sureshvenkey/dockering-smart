@@ -7,3 +7,5 @@ A valid use case for ADD is when you want to extract a local tar file into a spe
 ADD rootfs.tar.gz /.
 
 The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. EXPOSE does not make the ports of the container accessible to the host. The EXPOSE instruction makes it available only for inter-container communication.
+
+The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions in side the container image. 
