@@ -63,8 +63,8 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 [root@ip-172-31-3-145 myweb_dockerfile]# docker build -t myphpapache .  
 [root@ip-172-31-3-145 myweb_dockerfile]# docker images  
 [root@ip-172-31-3-145 myweb_dockerfile]# cd ~  
-[root@ip-172-31-3-145 ~]# docker service create --name myweb -p 8080:80 myphpapache    
+```[root@ip-172-31-3-145 ~]# docker service create --name myweb -p 8080:80 myphpapache    
 [root@ip-172-31-3-145 ~]# docker service create --name mysql -p 3306:3306 mysqldb 
 [root@ip-172-31-3-145 ~]# docker service ls  
 [root@ip-172-31-3-145 ~]# docker service ps mysql  
-[root@ip-172-31-3-145 ~]# docker service ps myweb  
+[root@ip-172-31-3-145 ~]# docker service ps myweb``` 
