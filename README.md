@@ -2,8 +2,8 @@
 Dockering php application using php:apache docker image and mysql docker image
 
 ## Installing docker on rhel8
-Docker can be installed by specifying the install_docker.sh shell script in user data during the ec2 installation  
-Check the output from /var/log/cloud-init-output.log  
+* Docker can be installed by specifying the install_docker.sh shell script in user data during the ec2 installation. Check the output from /var/log/cloud-init-output.log
+* To do the normal installation view the install_docker.sh shell script
 
 ## dockering-php-application with out swarm
 [root@ip-172-31-3-145 /]# cd /  
