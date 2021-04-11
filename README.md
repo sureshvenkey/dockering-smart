@@ -2,18 +2,8 @@
 Dockering php application using php:apache docker image and mysql docker image
 
 ## Installing docker on rhel8
-[root@ip-172-31-3-145 ~]# cat /etc/redhat-release  
-Red Hat Enterprise Linux release 8.3 (Ootpa)  
-[root@ip-172-31-3-145 ~]# dnf update  
-[root@ip-172-31-3-145 ~]# dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo --> Add the repo  
-[root@ip-172-31-3-145 ~]# dnf repolist -v --> View the repo  
-[root@ip-172-31-3-145 ~]# dnf list docker-ce --showduplicates | sort -r  
-[root@ip-172-31-3-145 ~]# dnf install docker-ce-3:18.09.1-3.el7 --> Install latest version of docker  
-[root@ip-172-31-3-145 ~]# systemctl disable firewalld  
-[root@ip-172-31-3-145 ~]# systemctl enable --now docker  
-[root@ip-172-31-3-145 ~]# systemctl start docker  
-[root@ip-172-31-3-145 ~]# systemctl is-active docker  
-[root@ip-172-31-3-145 ~]# docker --version  
+Do the installation using using 
+Check the output from /var/log/cloud-init-output.log  
 
 ## dockering-php-application with out swarm
 [root@ip-172-31-3-145 /]# cd /  
