@@ -3,6 +3,7 @@ Dockering php application using php:apache docker image and mysql docker image
 
 # To clone the source files
 `git clone https://github.com/sureshvenkey/dockering-php-application.git  
+
 git clone https://github.com/sureshvenkey/dockering-smart.wiki.git`
 
 ## Installing docker on rhel8
